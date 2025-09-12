@@ -6,13 +6,13 @@ if(isset($_GET["id"])){
     $servername = "localhost";
     $username = "root";
     $password = "root";
-$database = "dt_crud";
+    $database = "sugarbunnies";
 
 //Criação da conexão
 
 $connection = new mysqli($servername, $username, $password, $database);
 
-$sql = "DELETE FROM clients WHERE id=$id";
+$sql = "DELETE FROM lista_personagens WHERE id=$id";
 
     $connection->query($sql);
 
