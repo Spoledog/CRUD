@@ -21,7 +21,15 @@
             --background-color: #FFEDED;
         }
 
-        h1,h2,h3,h4,h5,h6,th,label,button {
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        th,
+        label,
+        button {
             font-family: "Hachi Maru Pop", cursive;
             font-weight: 400;
             font-style: normal;
@@ -30,7 +38,7 @@
 
         .mainbox {
             border: 30px solid transparent;
-            border-image: url(https://solaria.neocities.org/guides/borderimage/whitelace.png) 30 round;
+            border-image: url(IMG/whitelace.png) 30 round;
             margin: auto;
         }
 
@@ -54,45 +62,45 @@
         <br>
         <br>
         <div class="mainbox">
-        <table class="table">
-            <thead >
-    </div>
-                <tr>
-                    <th>ID</th>
-                    <th>foto</th>
-                    <th>Nome</th>
-                    <th>Nome (japones)</th>
-                    <th>genero</th>
-                    <th>status</th>
-                    <th>Action</th>
-                </tr>
-                
-            </thead>
-            <?php
-            $servername = "localhost";
-            $username = "root";
-            $password = "root";
-            $database = "sugarbunnies";
-            // Criação da conexão
-            $connection = new mysqli($servername, $username, $password, $database);
-            // Verifiação de conexão
-            if ($connection->connect_error) {
-                die("Connection failed " . $connection->connect_error);
-            }
-            //Ler todas as linhas da tabela no banco de dados que criamos
-            $sql = "SELECT * FROM lista_personagens";
-            $result = $connection->query($sql);
+            <table class="table">
+                <thead>
+        </div>
+        <tr>
+            <th>ID</th>
+            <th>foto</th>
+            <th>Nome</th>
+            <th>Nome (japones)</th>
+            <th>genero</th>
+            <th>status</th>
+            <th>Action</th>
+        </tr>
 
-            if (!$result) {
-                die("Invalid query " . $connection->connect_error);
-            }
-            // Ler dados de cada linha.
-            while ($row = $result->fetch_assoc()) {
-                echo "
+        </thead>
+        <?php
+        $servername = "localhost";
+        $username = "root";
+        $password = "root";
+        $database = "sugarbunnies";
+        // Criação da conexão
+        $connection = new mysqli($servername, $username, $password, $database);
+        // Verifiação de conexão
+        if ($connection->connect_error) {
+            die("Connection failed " . $connection->connect_error);
+        }
+        //Ler todas as linhas da tabela no banco de dados que criamos
+        $sql = "SELECT * FROM lista_personagens";
+        $result = $connection->query($sql);
+
+        if (!$result) {
+            die("Invalid query " . $connection->connect_error);
+        }
+        // Ler dados de cada linha.
+        while ($row = $result->fetch_assoc()) {
+            echo "
     <tbody>
         <tr>
 <td>$row[id]</td>
-<td><img src='image.php?id=$row[id]' style='max-width:80px;max-height:80px;'></td>
+/td>
 <td>$row[nome]</td>
 <td>$row[nome_jp]</td>
 <td>$row[genero]</td>
@@ -103,9 +111,9 @@
 </td>
     </tr>
 ";
-            }
-            ?>
-            </tbody>
+        }
+        ?>
+        </tbody>
         </table>
     </div>
 </body>
