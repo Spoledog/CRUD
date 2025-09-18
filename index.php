@@ -100,7 +100,7 @@
     <tbody>
         <tr>
 <td>$row[id]</td>
-/td>
+<td><img src='image.php?id=$row[id]' style='max-width:80px;max-height:80px;'></td>
 <td>$row[nome]</td>
 <td>$row[nome_jp]</td>
 <td>$row[genero]</td>
